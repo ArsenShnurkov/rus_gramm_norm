@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rus_gramm_norm", "rus_gramm_norm\rus_gramm_norm.csproj", "{258966A1-BD31-4F07-9DB9-8F5342A17A51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{258966A1-BD31-4F07-9DB9-8F5342A17A51}.Debug|x86.ActiveCfg = Debug|x86
+		{258966A1-BD31-4F07-9DB9-8F5342A17A51}.Debug|x86.Build.0 = Debug|x86
+		{258966A1-BD31-4F07-9DB9-8F5342A17A51}.Release|x86.ActiveCfg = Release|x86
+		{258966A1-BD31-4F07-9DB9-8F5342A17A51}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
