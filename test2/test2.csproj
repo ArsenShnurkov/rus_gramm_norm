@@ -42,6 +42,10 @@
 		<Compile Include="00_Symbols\NonterminalSymbol.cs" />
 		<Compile Include="RecursiveDescent\RecursiveDescent.cs" />
 		<Compile Include="00_Symbols\SymbolReader.cs" />
+		<Compile Include="02_EBNF\EbnfGrammar.cs" />
+		<Compile Include="02_EBNF\EbnfRule.cs" />
+		<Compile Include="02_EBNF\EbnfNonterminal.cs" />
+		<Compile Include="02_EBNF\EbnfRulePart.cs" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="01_BNF\" />
