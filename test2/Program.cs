@@ -2,7 +2,7 @@
 
 namespace test2
 {
-    class MainClass
+    partial class MainClass
     {
         public static BnfGrammar Test1 ()
         {
@@ -23,7 +23,7 @@ namespace test2
             G.Add (rule3);
             return G;
         }
-        public static void Main (string [] args)
+        public static void Main1 (string [] args)
         {
             var G = Test1 ();
             var text = new SymbolReader ("cad");

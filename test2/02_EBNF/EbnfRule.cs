@@ -3,17 +3,18 @@ using System.Collections.Generic;
 
 namespace test2
 {
+    public interface IEbnfRuleRightPart { }
     public class EbnfRule
     {
         protected EbnfNonterminal nonterminal;
-        protected IEbnfRulePart [] p;
-        public EbnfRule (EbnfNonterminal nt, IEbnfRulePart [] parts)
+        protected IEbnfRuleRightPart p;
+        public EbnfRule (EbnfNonterminal nt, IEbnfRuleRightPart rightPart)
         {
             nonterminal = nt;
-            p = parts;
+            p = rightPart;
         }
         public EbnfNonterminal Nonterminal { get { return nonterminal; } }
-        public IEnumerable<IEbnfRulePart> Parts { get { return p; } }
+        public IEbnfRuleRightPart RightPart { get { return p; } }
     }
 }
 

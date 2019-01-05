@@ -45,13 +45,31 @@
 		<Compile Include="02_EBNF\EbnfGrammar.cs" />
 		<Compile Include="02_EBNF\EbnfRule.cs" />
 		<Compile Include="02_EBNF\EbnfNonterminal.cs" />
-		<Compile Include="02_EBNF\EbnfRulePart.cs" />
+		<Compile Include="Program.Test2.cs" />
+		<Compile Include="02_EBNF\EbnfTerminal.cs" />
+		<Compile Include="04_FromEbnfToBnf\FromEbnfToBnf_ByCopying.cs" />
+		<Compile Include="02_EBNF\AbstractOperation.cs" />
+		<Compile Include="02_EBNF\TreeNodes\34_EbnfChoice.cs" />
+		<Compile Include="02_EBNF\TreeNodes\36_EbnfEnumeration.cs" />
+		<Compile Include="02_EBNF\TreeNodes\35_EbnfExpression.cs" />
+		<Compile Include="02_EBNF\TreeNodes\45_EbnfHiding.cs" />
+		<Compile Include="02_EBNF\TreeNodes\46_EbnfGrouping.cs" />
+		<Compile Include="02_EBNF\TreeNodes\47_EbnfRepetition.cs" />
+		<Compile Include="02_EBNF\TreeNodes\52_EbnfExclusion.cs" />
+		<Compile Include="04_FromEbnfToBnf\RuleConversionFootprint.cs" />
+		<Compile Include="03_Tracking\OperationFootprint.cs" />
+		<Compile Include="03_Tracking\OperationFootprintGroup.cs" />
+		<Compile Include="04_FromEbnfToBnf\NonterminalConversionFootprint.cs" />
+		<Compile Include="04_FromEbnfToBnf\GrammarConversionFootprint.cs" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="01_BNF\" />
 		<Folder Include="00_Symbols\" />
 		<Folder Include="02_EBNF\" />
 		<Folder Include="RecursiveDescent\" />
+		<Folder Include="04_FromEbnfToBnf\" />
+		<Folder Include="02_EBNF\TreeNodes\" />
+		<Folder Include="03_Tracking\" />
 	</ItemGroup>
 	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,12 +24,20 @@ namespace test2
             }
             nt.Add (rule);
         }
-        public BnfNonterminal this [string ruleName] {
+        public BnfNonterminal this [string name] {
             get {
-                return NonTerminals [ruleName];
+                return NonTerminals [name];
             }
         }
-
+        public BnfNonterminal AddNonterminal (string name)
+        {
+            if (NonTerminals.ContainsKey (name)) {
+                return NonTerminals [name];
+            }
+            var nt = new BnfNonterminal (name);
+            NonTerminals.Add (name, nt);
+            return nt;
+        }
     }
 }
 

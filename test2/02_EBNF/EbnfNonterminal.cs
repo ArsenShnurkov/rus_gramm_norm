@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 namespace test2
 {
-    public class EbnfNonterminal : NonterminalSymbol
+    public class EbnfNonterminal : NonterminalSymbol,
+        IEbnfRuleRightPart,
+        IEbnfEnumerationPart
     {
         Dictionary<EbnfRule, EbnfRule> rules = new Dictionary<EbnfRule, EbnfRule> ();
         public EbnfNonterminal (string name) : base (name)
