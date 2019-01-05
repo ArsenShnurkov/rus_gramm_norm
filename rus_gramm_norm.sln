@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rus_gramm_norm", "rus_gramm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test1", "test1\test1.csproj", "{808E94EB-4784-41AF-BAB4-C7DE3A660C47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test2", "test2\test2.csproj", "{B2D9BE91-41E7-4CE8-8497-EB8AB5CA187E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -17,5 +19,9 @@ Global
 		{808E94EB-4784-41AF-BAB4-C7DE3A660C47}.Debug|x86.Build.0 = Debug|x86
 		{808E94EB-4784-41AF-BAB4-C7DE3A660C47}.Release|x86.ActiveCfg = Release|x86
 		{808E94EB-4784-41AF-BAB4-C7DE3A660C47}.Release|x86.Build.0 = Release|x86
+		{B2D9BE91-41E7-4CE8-8497-EB8AB5CA187E}.Debug|x86.ActiveCfg = Debug|x86
+		{B2D9BE91-41E7-4CE8-8497-EB8AB5CA187E}.Debug|x86.Build.0 = Debug|x86
+		{B2D9BE91-41E7-4CE8-8497-EB8AB5CA187E}.Release|x86.ActiveCfg = Release|x86
+		{B2D9BE91-41E7-4CE8-8497-EB8AB5CA187E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
