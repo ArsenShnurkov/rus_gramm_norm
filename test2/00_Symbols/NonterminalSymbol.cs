@@ -7,6 +7,7 @@ namespace test2
         protected string n;
         public NonterminalSymbol (string name)
         {
+            n = name;
         }
         public string Name { get { return n; } }
     }
