@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class FromEbnfToBnf_ByCopying
 {
-    public GrammarConversionFootprint Footprint { get; set; }
+    public OperationFootprintGroup<EbnfGrammar, BnfGrammar> Footprint { get; set; }
     public BnfGrammar Bnf { get; set; }
 
     Dictionary<EbnfNonterminal, NonterminalConversionFootprint> nonterminalConversions = new Dictionary<EbnfNonterminal, NonterminalConversionFootprint> ();
@@ -82,7 +82,7 @@ public class FromEbnfToBnf_ByCopying
     BnfGrammar Convert (EbnfGrammar EG)
     {
         Bnf = new BnfGrammar ();
-        Footprint = new GrammarConversionFootprint (EG, Bnf);
+        Footprint = new OperationFootprintGroup<EbnfGrammar, BnfGrammar> (EG, Bnf);
         foreach (var er in EG.Rules) {
             BnfRule br = Convert (er);
         }

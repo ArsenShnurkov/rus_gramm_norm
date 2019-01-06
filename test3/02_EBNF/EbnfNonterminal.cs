@@ -2,6 +2,7 @@
 
 public class EbnfNonterminal : NonterminalSymbol,
     IEbnfRuleRightPart,
+    IEbnfExpressionPart,
     IEbnfEnumerationPart
 {
     Dictionary<EbnfRule, EbnfRule> rules = new Dictionary<EbnfRule, EbnfRule> ();

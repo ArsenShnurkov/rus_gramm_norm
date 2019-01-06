@@ -4,6 +4,11 @@ namespace test3
 {
     class MainClass
     {
+        static EbnfTerminal CreateTerminalFromBits (EbnfEnumeration ebnfEnumeration)
+        {
+            throw new NotImplementedException ();
+        }
+
         public static EbnfGrammar Test3 ()
         {
             var G = new EbnfGrammar ();
@@ -95,20 +100,59 @@ namespace test3
             EbnfTerminal T02E = new EbnfTerminal ("."); EbnfTerminal T02C = new EbnfTerminal (",");
             EbnfTerminal T02A = new EbnfTerminal ("*"); EbnfTerminal T02D = new EbnfTerminal ("-");
 
+            var R07 = new EbnfRule (N07, new EbnfEnumeration (new IEbnfEnumerationPart [] {
+                CreateTerminalFromBits(new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T414, T415 })),
+                CreateTerminalFromBits(new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T411, T411 })),
+                CreateTerminalFromBits(new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T411, T415 }))
+            }));
+            var R12 = new EbnfRule (N12,
+                CreateTerminalFromBits (new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T030, T037 }))
+            );
+            var R13 = new EbnfRule (N13,
+                CreateTerminalFromBits (new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T032, T030 }))
+            );
+            var R15 = new EbnfRule (N15,
+                CreateTerminalFromBits (new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T030, T410 }))
+            );
+            var R16 = new EbnfRule (N16,
+                CreateTerminalFromBits (new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T030, T411 }))
+            );
+            var R21 = new EbnfRule (N21, new EbnfEnumeration (new IEbnfEnumerationPart [] {
+                T030, T031, T032, T033, T034, T035, T036, T037, T038, T039
+            }));
             var R22 = new EbnfRule (N22, new EbnfExpression (new IEbnfExpressionPart [] {
                 T430, T410, T431, T411, T432, T412, T433, T413, T434, T414, T435, T415, T451, T401,
                 T436, T116, T437, T417, T438, T418, T439, T419, T43A, T41A, T43B, T41B, T43C, T41C,
                 T43D, T41В, T43E, T41E, T43F, T41F, T440, T420, T441, T421, T442, T422, T443, T423,
                 T444, T424, T445, T425, T446, T426, T447, T427, T448, T428, T449, T429, T44A, T42A,
                 T44B, T42B, T44C, T42C, T44D, T42D, T44E, T42E, T44F, T42А
-            })); G.Add (R22);
+            }));
+            var R33 = new EbnfRule (N33,
+                CreateTerminalFromBits (new EbnfEnumeration (new IEbnfEnumerationPart [] { T030, T448, T032, T032 }))
+            );
+            var R30 = new EbnfRule (N30, new EbnfExpression (new IEbnfExpressionPart [] {
+                T02D, T03B, T03D, T02C, T02A, T05B, T05D, T07B, T07D, T028, T029, T03F, T02E, R33.Nonterminal
+            }));
+
+            G.Add (R07);
+            G.Add (R12);
+            G.Add (R13);
+            G.Add (R15);
+            G.Add (R16);
+            G.Add (R21);
+            G.Add (R22);
+            G.Add (R30);
+            G.Add (R33);
 
             return G;
         }
+
         public static void Main (string [] args)
         {
             var EG = Test3 ();
-            var c = new FromEbnfToBnf_ByCopying (EG);
+            var expansionRun = new ExpansionsionRun (EG);
+            var EG2 = expansionRun.After;
+            var c = new FromEbnfToBnf_ByCopying (EG2);
             var text = new SymbolReader ("cad");
             var pc = new RecursiveDescentParser (text);
             var res = pc.RecusiveDescent (c.Bnf ["S"]);

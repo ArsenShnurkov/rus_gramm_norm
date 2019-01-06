@@ -55,11 +55,11 @@
     <Compile Include="02_EBNF\TreeNodes\52_EbnfExclusion.cs" />
     <Compile Include="03_Tracking\OperationFootprint.cs" />
     <Compile Include="03_Tracking\OperationFootprintGroup.cs" />
-    <Compile Include="04_FromEbnfToBnf\FromEbnfToBnf_ByCopying.cs" />
-    <Compile Include="04_FromEbnfToBnf\GrammarConversionFootprint.cs" />
-    <Compile Include="04_FromEbnfToBnf\NonterminalConversionFootprint.cs" />
-    <Compile Include="04_FromEbnfToBnf\RuleConversionFootprint.cs" />
     <Compile Include="RecursiveDescent\RecursiveDescent.cs" />
+    <Compile Include="04_FromEbnfToBnf\CopyingToBNF\FromEbnfToBnf_ByCopying.cs" />
+    <Compile Include="04_FromEbnfToBnf\CopyingToBNF\NonterminalConversionFootprint.cs" />
+    <Compile Include="04_FromEbnfToBnf\CopyingToBNF\RuleConversionFootprint.cs" />
+    <Compile Include="04_FromEbnfToBnf\ExpansionsionRun.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="00_Symbols\" />
@@ -69,6 +69,7 @@
     <Folder Include="04_FromEbnfToBnf\" />
     <Folder Include="Properties\" />
     <Folder Include="RecursiveDescent\" />
+    <Folder Include="04_FromEbnfToBnf\CopyingToBNF\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
